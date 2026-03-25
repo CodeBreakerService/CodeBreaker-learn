@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeBreaker learn®</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <header>
+        <div class="logo"><span class="material-icons">code</span> CodeBreaker learn®</div>
+        <div class="nav-right">
+            <span id="user-name"><span class="material-icons">person</span> Гость</span>
+            <button onclick="toggleModal(true)"><span class="material-icons">settings</span> Профиль</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="admin-panel" class="card" style="display:none;">
+            <h3><span class="material-icons">add_box</span> Новый урок</h3>
+            <input type="text" id="post-title" placeholder="Название">
+            <select id="post-cat">
+                <option>Python</option><option>Html</option><option>CSS</option>
+                <option>JavaScript</option><option>Приложение</option>
+            </select>
+            <textarea id="post-text" placeholder="Контент урока"></textarea>
+            <button onclick="sendPost()"><span class="material-icons">send</span> Опубликовать</button>
+        </div>
+
+        <div id="feed"></div>
+    </main>
+
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <h3><span class="material-icons">edit</span> Профиль</h3>
+            <div class="inp-row"><span class="material-icons">badge</span><input id="name-in" placeholder="Имя"></div>
+            <div class="inp-row"><span class="material-icons">lock</span><input id="code-in" type="password" placeholder="Код админа"></div>
+            <button onclick="saveProfile()"><span class="material-icons">save</span> Сохранить</button>
+            <button onclick="toggleModal(false)"><span class="material-icons">close</span> Закрыть</button>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
